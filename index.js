@@ -66,6 +66,7 @@ function calculateArea(type) {
   }
 }
 
+// area in cm square
 function totalArea(value) {
   sum += value;
   document.getElementById("total-area-in-cm").innerText = sum;
