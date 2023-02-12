@@ -18,7 +18,7 @@ function takeInput(type) {
       document.getElementById("default-radius").innerText = radius;
 
       // clear the input field
-      document.getElementById("default-radius").value = "";
+      document.getElementById("custom-radius").value = "";
 
       //hide the input fields
       document.getElementById("circle-input-field").className = "d-none";
