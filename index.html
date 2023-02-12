@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Bootstrap demo</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+      crossorigin="anonymous"
+    />
+    
+    <script
+      src="https://kit.fontawesome.com/add6e03308.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <h1 class="text-center mt-5">Interactive Geometry Book</h1>
+    <section class="row">
+      <div class="col-7 mt-5 ms-5">
+        <div class="row row-cols-1 row-cols-md-2">
+
+          <!-- Shapes section -->
+          <div class="col">
+
+            <!-- Circle -->
+            <div id="circle" class="card w-75" style="cursor:pointer">
+
+              <img onclick="calculateArea('circle')" class="m-5 bg-info-subtle" src="./images/circle.png"/>
+
+              <div class="card-body">
+                <h5 class="card-title text-center">
+                  Circle
+                  <i
+                    onclick="toggle('circle')"
+                    class="fa-solid fa-pen-to-square"
+                  ></i>
+                </h5>
+
+                <p class="text-center">
+                  radius=<span id="default-radius">5</span>cm
+                </p>
+
+                <div id="circle-input-field" class="d-none">
+                  <input 
+                    id="custom-radius" 
+                    class="w-50" type="number" 
+                    placeholder="radius" 
+                  /> cm
+                   
+                  <!-- submit button -->
+                  <input
+                    onclick="takeInput('circle')"
+                    class="btn btn-success"
+                    type="submit"
+                    value="submit"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col">
+            <div id="rectangle" class="card w-75" style="cursor:pointer">
+
+              <img onclick="calculateArea('rectangle')" class="m-5 bg-info-subtle" src="./images/purple-rectangle.png" />
+
+              <div class="card-body">
+                <h5 class="card-title text-center">
+                  Rectangle
+                  <i
+                    onclick="toggle('rectangle')"
+                    class="fa-solid fa-pen-to-square"
+                  ></i>
+                </h5>
+
+                <p class="text-center">
+                  length=<span id="default-length">5</span>cm 
+                  breadth=<span id="default-breadth">4</span>cm
+                </p>
+
+                <div id="rectangle-input-field" class="d-none">
+                  <input 
+                  id="custom-length" 
+                    class="w-25" 
+                    type="number" 
+                    placeholder="length" /> cm
+
+                  <input
+                  id="custom-breadth"
+                    class="w-25 ms-2"
+                    type="number"
+                    placeholder="breadth"
+                  />
+                  cm
+
+                  <!-- submit button -->
+                  <input
+                    onclick="takeInput('rectangle')"
+                    class="btn btn-success"
+                    type="submit"
+                    value="submit"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Calculation section -->
+      <div class="col-4 mt-5">
+        
+        <div class="card h-100">
+           <h1 class="text-center mt-3">Total Area</h1>
+            <div class="card-body">
+             <!-- list of shapes -->
+             <ol>
+                <li>
+                  Circle: <span id="circle-area">0</span> cm<sup>2</sup>
+                </li>
+                <li>
+                  Rectangle: <span id="rectangle-area">0</span> cm<sup>2</sup>
+                </li>
+             </ol>
+
+             <hr>
+             <!-- Total area in cm square -->
+             <p>
+              Total: <span id="total-area-in-cm">0</span> cm <sup>2</sup>
+            </p>
+
+            <!-- Total area in meter square -->
+             <div class="d-flex justify-content-center ">
+                <button onclick="totalMeterSquareArea()" class="btn btn-info mb-5">
+                  Convert to <span>m</span><sup>2</sup>
+                </button>
+              </div>
+      
+              <h2 class="text-center">
+                Area in m <sup>2</sup> : <span id="total-area-in-m">0</span>
+              </h2>
+
+            </div>
+          </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+      crossorigin="anonymous"
+    ></script>
+
+    <script src="./index.js"></script>
+  </body>
+</html>
